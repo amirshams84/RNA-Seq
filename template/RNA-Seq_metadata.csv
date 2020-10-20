@@ -1,0 +1,2 @@
+﻿title,ref_id,platform,sample_delimiter,single_end,input,output
+RNA_test_paired,hg19,illumina,_,0,/data/shamsaddinisha/Test_Space/RNA_Seq/data_test/subsample,/data/shamsaddinisha/Test_Space/RNA_Seq

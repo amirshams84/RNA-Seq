@@ -1,0 +1,106 @@
+__default__:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.{rule}.{wildcards}.stderr"
+
+trim_fastp:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.pre_process.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.pre_process.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.pre_process.{rule}.{wildcards}.stderr"
+
+map_star:
+  partition: norm
+  time: 24:00
+  core: 30
+  memory: 96000
+  jobname: "GTS_Snake.RNA-Seq.mapping.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping.{rule}.{wildcards}.stderr"
+
+
+samtools:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
+
+
+mosdepth:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
+
+
+fastqc:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
+
+
+sortmeRNA:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
+
+
+dupradar:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
+
+
+rseqc:
+  partition: quick
+  time: 4:00
+  core: 10
+  memory: 10000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
+
+
+kraken:
+  partition: norm
+  time: 24:00
+  core: 30
+  memory: 50000
+  jobname: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}"
+  extra: "--gres=lscratch:500"
+  output: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stdout"
+  error: "GTS_Snake.RNA-Seq.mapping_qc.{rule}.{wildcards}.stderr"
